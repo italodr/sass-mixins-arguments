@@ -1,0 +1,23 @@
+{
+  "name": "sass-mixins-arguments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SabrinaFiore/sass-mixins-arguments.git"
+  },
+  "author": "SabrinaFiore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SabrinaFiore/sass-mixins-arguments/issues"
+  },
+  "homepage": "https://github.com/SabrinaFiore/sass-mixins-arguments#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  }
+}
