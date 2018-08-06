@@ -26,7 +26,7 @@ gulp.task('sass', function(){
 gulp.task('sass', function(){
     return gulp.src('app/scss/styles.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('app/css/style.css'))
+    .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('sass', function() {
@@ -44,3 +44,29 @@ gulp.task('watch', function(){
     // Other watchers
 })
 
+// Live-reloading with Browser Sync
+
+var browserSync = require('browser-sync').create();
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: 'app'
+        },
+    })
+})
+
+gulp.task('sass', function() {
+    return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+    .pipe(sass())
+    .pipe(gulp.dest('app/css'))
+    .pipe(browserSync.reload({
+    stream: true
+    }))
+}); 
+
+gulp.task('watch', ['array', 'of', 'tasks', 'to', 'complete','before', 'watch'], function (){
+})
+
+gulp.task('watch', ['browserSync',  'sass'], function (){
+    gulp.watch('app/scss/**/*.scss', ['sass']); 
+});
